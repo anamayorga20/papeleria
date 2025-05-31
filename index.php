@@ -78,6 +78,7 @@ $imgProd = [
     </div>
   </section>
 
+  
    <!-- Categorías -->
   <section id="categorias" class="categorias container">
     <h2>proyectos</h2>
