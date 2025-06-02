@@ -1,18 +1,12 @@
 <?php
 include 'config.php';
-$sql = "SELECT nombre_producto, precio, stock 
+$sql = "SELECT nombre_producto, precio, stock, urlimage 
         FROM productos 
         WHERE stock > 0 
         LIMIT 8";
 $res = $conn->query($sql);
 
-// Mapeo nombre → fichero de imagen
-$imgProd = [
-  'Marcadores de colores' => 'marcadores.jpg',
-  'Engrapadora roja'      => 'engrapadora.jpg',
-  'Cinta adhesiva'        => 'cinta.jpg',
-  'Bolígrafo de gel'      => 'boligrafo.jpg'
-];
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -48,6 +42,7 @@ $imgProd = [
         ?>
           <div class="producto">
             <!-- <img src="assets/< ?= $file ?>" alt="< ?= htmlspecialchars($p['nombre_producto']) ?>"/>-->
+             <img src="<?= $p["urlimage"] ?>" width="100" height="100">
             <p class="nombre"><?= htmlspecialchars($p['nombre_producto']) ?></p>
             <p class="precio">$<?= number_format($p['precio'],2,'.','') ?></p>
             <button class="btn">Añadir</button>
@@ -62,6 +57,7 @@ $imgProd = [
   <footer class="site-footer">
     <div class="container">
       <p>© 2025 Papelería y Miscelánea.</p>
+      <p>Contacto: jatzellpapeleriaymiscelania@gmail.com | +57 3150459750</p>
     </div>
   </footer>
 </body>
