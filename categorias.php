@@ -1,6 +1,8 @@
 <?php
 include 'config.php';
 
+
+
 // 1) Consulta para obtener productos junto con su categoría
 $sql = "
   SELECT 
